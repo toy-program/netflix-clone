@@ -15,6 +15,5 @@
     "noEmit": true,
     "jsx": "preserve"
   },
-  "include": ["src"],
-  "exclude": ["src/setupProxy.js"]
+  "include": ["src"]
 }

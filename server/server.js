@@ -7,18 +7,21 @@ const cookieParser = require("cookie-parser");
 const helmet = require("helmet");
 
 const routers = require("./routers");
+const connect = require("./schemas");
 
 const PORT = process.env.PORT || 4000;
+
+connect();
 
 app.use(logger("dev"));
 app.use(helmet());
 app.use(express.static(path.join(__dirname, "../", "public/")));
+app.use(express.json());
 app.use(
   express.urlencoded({
     extended: true
   })
 );
-app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api", routers);
